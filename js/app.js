@@ -3,6 +3,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('casa', [
     'ui.router',
+    'ui.select2',
     'ui.bootstrap',
     'casa.controllers',
     'casa.directives'

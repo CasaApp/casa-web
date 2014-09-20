@@ -12,6 +12,7 @@ angular.module('casa.controllers', [])
 })
 
 .controller('ListingsController', function($scope) {
+
     $scope.listings = [
         {
             "id": 1,
@@ -88,8 +89,16 @@ angular.module('casa.controllers', [])
         });
     };
 
-    var SignupModalInstance = function ($scope, $modalInstance) {
+    var SignupModalInstance = function ($scope, $http, $modalInstance) {
         $scope.signup = function () {
+            $http.post("http://casa.tpcstld.me/api/users", {
+                name: "Karel Vuong",
+                password: "dinahsaur",
+                email: "karel.vuong@uwaterloo.ca"
+            }).success(function(data) {
+                console.log(data)
+            })
+
             $modalInstance.close();
         };
 
