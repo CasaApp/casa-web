@@ -28,50 +28,165 @@
 
     <body ng-controller="ApplicationController">
         <header>
-            <div class="container">
-                <div class="pull-left">
-                    <a class="logo" ui-sref="main"><img src="/img/logo.png"></a>
-                </div>
-                <ul class="pull-left">
-                    <li><a ui-sref="listings">Listings</a></li>
-                    <li ng-if="loggedIn"><a ui-sref="bookmarks">Bookmarks</a></li>
-                </ul>
-                <ul class="pull-right" ng-if="!loggedIn">
-                    <li ng-controller="ModalDemoCtrl"><a ng-click="open()">Login</a></li>
-                    <li><a ui-sref="signup">Signup</a></li>
-                </ul>
-                <ul class="pull-right" ng-if="loggedIn">
-                    <li><a ui-sref="profile">Name</a></li>
-                </ul>
-            </div>
+            <a class="logo pull-left" ui-sref="main"><img src="/img/logo.png"></a>
+
+            <ul class="pull-right" ng-if="!loggedIn">
+                <li ng-controller="ModalDemoCtrl"><a ng-click="open()">Login</a></li>
+                <li><a ui-sref="signup">Signup</a></li>
+            </ul>
+            <ul class="pull-right" ng-if="loggedIn">
+                <li><a ui-sref="profile({username:'karelvuong'})">Me</a></li>
+                <li><a ng-click="toggleLoggedIn()">Logout</a></li>
+            </ul>
         </header>
 
-        <div class="site" ui-view></div>
+        <div class="site">
+            <div class="panel-container" ui-view>
+                <div class="panel col-md-6">
+                    <div class="panel-half">
+                        <div class="google-maps">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="panel--filter panel-half border-t">
+                        <div class="panel-inner">
+                            <div class="box-sort sm-padding">
+                                <select class="select-sort">
+                                    <option>Last Posted</option>
+                                    <option>Price</option>
+                                </select>
+                            </div>
+
+                            <div class="row sm-padding">
+                                <div class="col-2 col-md-8">
+                                    <label>Location</label>
+                                    <input type="text" placeholder="Where do you want to center your search?">
+                                </div>
+
+                                <div class="col-2 col-md-4">
+                                    <label>Distance</label>
+
+                                    <div class="row">
+                                        <div class="col-2 col-xs-6">
+                                            <input type="number" value="5">
+                                        </div>
+                                        <div class="col-2 col-xs-6">
+                                            <select>
+                                                <option default>Km</option>
+                                                <option>Mi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row sm-padding">
+                                <div class="col-2 col-md-4">
+                                    <label>Start Date</label>
+                                    <input type="date" placeholder="Where do you want to center your search?">
+                                </div>
+
+                                <div class="col-2 col-right-offset col-md-4">
+                                    <label>End Date</label>
+                                    <input type="date" placeholder="Where do you want to center your search?">
+                                </div>
+
+                                <div class="col-2 col-left-offset col-md-2">
+                                    <label>Max Price</label>
+
+                                    <div class="input-currency-group">
+                                        <span>$</span>
+                                        <input class="input-currency" type="number" value="500" min="0" max="1000000">
+                                    </div>
+                                </div>
+
+                                <div class="col-2 col-md-2">
+                                    <label>Rooms</label>
+
+                                    <select>
+                                        <option default>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="box-apply">
+                                <a><button class="btn-apply">Apply</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel--listings panel col-md-6 col-md-offset-6 border-l" ng-controller="ListingsController">
+
+                    <div class="tab-bar">
+                        <div class="row">
+                            <div class="tab tab-search-results col-md-6 tab--active">
+                                <p class="row">Search Results <span class="label pull-right">63</span></p>
+                            </div>
+                            <div class="tab tab-bookmarks col-md-6">
+                                <p class="row">Bookmarks <span class="label pull-right">2</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="listings-list">
+                        <li class="listing" ng-repeat="sublet in listings">
+                            <a class="cover" style="background-image: url({{sublet.cover}})" ui-sref="listings.view({subletId: sublet.id})"></a>
+
+                            <a class="bookmark" ng-click="bookmarked = !bookmarked"><i class="fa" ng-class="{'fa-star-o': !bookmarked, 'fa-star': bookmarked}"></i></a>
+
+                            <div class="information row sm-padding">
+                                <div class="availability col-md-2">
+                                    <p class="availability-count pull-left">2</p>
+                                    <p class="availability-text">rooms<br>available</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="address"><a ui-sref="listings.view({subletId: sublet.id})" ng-bind="sublet.address"></a></p>
+                                    <p class="city" ng-bind="sublet.city"></p>
+                                </div>
+                                <div class="proximity text-right col-md-2">
+                                    <p class="proximity-text pull-right">100m<br>away</p>
+                                    <p class="proximity-icon pull-right"><i class="fa fa-map-marker"></i></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
         <!-- <footer class="md-padding">
             <div class="container text-center">
                 <ul>
-                    <li><a ng-click="toggleLoggedIn()">Toggle login</a></li>
+                    <li><a>Toggle login</a></li>
                 </ul>
             </div>
         </footer> -->
 
         <script type="text/ng-template" id="myModalContent.html">
             <div class="modal-body modal-login">
-                <input class="input-username" type="text" placeholder="Username">
-                <input class="input-password" type="password" placeholder="Password">
+                <form>
+                    <input class="input-username" type="text" placeholder="E-mail address">
+                    <input class="input-password" type="password" placeholder="Password">
 
-                <div class="login-controls row">
-                    <div class="pull-left">
-                        <input type="checkbox"> <a>Remember me</a>
+                    <div class="login-controls row">
+                        <div class="pull-left">
+                            <input type="checkbox"> <a>Remember me</a>
+                        </div>
+                        <div class="pull-right">
+                            <a>Forgot password?</a>
+                        </div>
                     </div>
-                    <div class="pull-right">
-                        <a>Forgot password?</a>
-                    </div>
-                </div>
 
-                <button class="bg-red" ng-click="login()">Log In</button>
-                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    <button class="bg-red" type="submit" ng-click="login(); toggleLoggedIn()">Log In</button>
+                    <a ui-sref="signup"><button class="bg-blue">Sign Up</button></a>
+                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                </form>
             </div>
         </script>
 

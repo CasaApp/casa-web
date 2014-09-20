@@ -1,6 +1,8 @@
 header {
-    background: #EA4831;
+    background-color: $clr-red;
+    box-shadow: 0 0 0 4px darken($clr-red, 10%);
     height: 50px;
+    padding: 0 20px;
     position: fixed;
     top: 0;
     left: 0;

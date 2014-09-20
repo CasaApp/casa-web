@@ -33,13 +33,67 @@
     }
 }
 
+.tab-bar {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 20px;
+    margin-bottom: 0;
+    padding: 10px;
+    text-align: left;
+
+    .tab {
+        p {
+            color: #333;
+
+            .label {
+                background-color: #555;
+                color: #fff;
+                padding: 2px 8px;
+                border-radius: 4px;
+            }
+        }
+
+        &.tab--active {
+            p {
+                color: #D32D15;
+            }
+
+            .label {
+                background-color: #EA4831;
+            }
+        }
+    }
+
+    .tab-search-results {
+        border-right: 1px solid #ddd;
+
+        p {
+            padding-right: 10px;
+        }
+    }
+
+    .tab-bookmarks {
+        p {
+            padding-left: 10px;
+        }
+    }
+}
 
 
-
+.panel--listings {
+    background-color: #ededed;
+}
 
 .listings-list {
     .listing {
-        border-bottom: 1px solid #bbb;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+        margin: 20px;
+        position: relative;
 
         .cover {
             background-color: #eee;
@@ -47,24 +101,81 @@
             background-repeat: no-repeat;
             background-size: cover;
             border-bottom: 1px solid #bbb;
+            display: block;
             height: 250px;
+            opacity: 1;
+
+            @include transition(opacity ease-in-out .15s);
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        .bookmark {
+            color: #fff;
+            font-size: 30px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            text-shadow: 0 0 1px #000;
+        }
+
+        .price {
+
         }
 
         .information {
+            background-color: #fff;
             color: #000;
             display: block;
             text-decoration: none;
 
+            p {
+                margin-bottom: 0;
+            }
+
+            .availability,
+            .proximity {
+                margin-top: 3px;
+            }
+
+            .availability-count,
+            .availability-text,
+            .proximity {
+                line-height: 1;
+            }
+
+            .availability-count,
+            .proximity-icon {
+                color: #000;
+                font-size: 26px;
+                margin-right: 5px;
+            }
+
+            .availability-text {
+                color: #9a9a9a;
+            }
+
+            .proximity {
+                color: #9a9a9a;
+            }
+
             .address {
-                font-size: 24px;
+                font-size: 16px;
                 font-weight: 700;
                 line-height: 1;
                 margin-bottom: 0;
+                text-align: center;
+
+                a {
+                    color: #000;
+                }
             }
 
             .city {
                 color: #929292;
-                font-size: 16px;
+                text-align: center;
             }
         }
 

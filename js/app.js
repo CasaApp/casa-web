@@ -22,10 +22,6 @@ angular.module('casa', [
     $stateProvider
     .state('main', {
         url: "/",
-        templateUrl: "/partials/main.html"
-    })
-    .state('listings', {
-        url: "/listings",
         templateUrl: "/partials/listings/_layout.html"
     })
     .state('listings.new', {
