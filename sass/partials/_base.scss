@@ -1,0 +1,199 @@
+$clr-gray: #555555;
+
+$clr-facebook: #3B5998;
+$clr-googleplus: #DD4B39;
+$clr-instagram: #3F729B;
+$clr-linkedin: #0976B4;
+$clr-pinterest: #CC2127;
+$clr-twitter: #55ACEE;
+$clr-vimeo: #1AB7EA;
+$clr-youtube: #E52D27;
+
+$clr-android: #A4C639;
+$clr-apple: #A7A9AB;
+$clr-blackberry: #000000;
+
+//
+// Backgrounds
+//
+.bg-gray { background-color: $clr-gray !important; }
+
+.bg-facebook {
+    background-color: $clr-facebook !important;
+
+    button {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+            color: $clr-facebook;
+            background: #fff;
+        }
+    }
+}
+
+.bg-googleplus {
+    background-color: $clr-googleplus !important;
+
+    button {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+            color: $clr-googleplus;
+            background: #fff;
+        }
+    }
+}
+
+.bg-instagram {
+    background-color: $clr-instagram !important;
+
+    button {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+            color: $clr-instagram;
+            background: #fff;
+        }
+    }
+}
+
+.bg-linkedin {
+    background-color: $clr-linkedin !important;
+
+    button {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+            color: $clr-linkedin;
+            background: #fff;
+        }
+    }
+}
+
+.bg-pinterest {
+    background-color: $clr-pinterest !important;
+
+    button {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+            color: $clr-pinterest;
+            background: #fff;
+        }
+    }
+}
+
+.bg-twitter {
+    background-color: $clr-twitter !important;
+
+    button {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+            color: $clr-twitter;
+            background: #fff;
+        }
+    }
+}
+
+.bg-vimeo {
+    background-color: $clr-vimeo !important;
+
+    button {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+            color: $clr-vimeo;
+            background: #fff;
+        }
+    }
+}
+
+.bg-youtube {
+    background-color: $clr-youtube !important;
+
+    button {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+            color: $clr-youtube;
+            background: #fff;
+        }
+    }
+}
+
+.bg-android { background-color: $clr-android !important; }
+.bg-apple { background-color: $clr-apple !important; }
+.bg-blackberry { background-color: $clr-blackberry !important; }
+
+.clr-white { color: #FFFFFF !important; }
+.clr-facebook { color: $clr-facebook !important; }
+.clr-googleplus { color: $clr-googleplus !important; }
+.clr-instagram { color: $clr-instagram !important; }
+.clr-linkedin { color: $clr-linkedin !important; }
+.clr-twitter { color: $clr-twitter !important; }
+.clr-youtube { color: $clr-youtube !important; }
+
+//
+//
+//
+
+@mixin animation($animation-property, $method) {
+    -webkit-animation: $animation-property $method;
+       -moz-animation: $animation-property $method;
+            animation: $animation-property $method;
+}
+
+@mixin animation-delay($animation-delay) {
+    -webkit-animation-delay: $animation-delay;
+       -moz-animation-delay: $animation-delay;
+            animation-delay: $animation-delay;
+}
+
+@mixin animation-duration($animation-duration) {
+    -webkit-animation-duration: $animation-duration;
+       -moz-animation-duration: $animation-duration;
+            animation-duration: $animation-duration;
+}
+
+@mixin animation-fill-mode($animation-fill-mode) {
+    -webkit-animation-fill-mode: $animation-fill-mode;
+       -moz-animation-fill-mode: $animation-fill-mode;
+            animation-fill-mode: $animation-fill-mode;
+}
+
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+       -moz-box-shadow: $shadow;
+            box-shadow: $shadow;
+}
+
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+       -moz-transform: rotate($degrees);
+        -ms-transform: rotate($degrees);
+         -o-transform: rotate($degrees);
+            transform: rotate($degrees);
+}
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+       -moz-transition: $transition;
+        -ms-transition: $transition;
+         -o-transition: $transition;
+            transition: $transition;
+}
+
+@mixin transition-delay($transition-delay) {
+    -webkit-transition-delay: $transition-delay;
+       -moz-transition-delay: $transition-delay;
+            transition-delay: $transition-delay;
+}

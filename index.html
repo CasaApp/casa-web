@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" ng-app="dimensions">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Dimensions</title>
+        <meta name="title" content="Dimensions">
+        <meta name="description" content="">
+
+        <meta name="application-name" content="Dimensions"/>
+        <!-- <meta name="msapplication-TileColor" content="#FFFFFF" /> -->
+        <!-- <meta name="msapplication-TileImage" content="http://www.1MMM.org/img/mstile-144x144.png" /> -->
+
+        <meta property="og:site_name" content="Dimensions">
+        <meta property="og:url" content="http://karelvuong.github.com/Dimensions">
+        <meta property="og:title" content="Dimensions">
+        <meta property="og:description" content="">
+
+        <base href="/"></base>
+
+        <!-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" /> -->
+
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body ng-controller="ApplicationController">
+        <header>
+            <div class="container">
+                <div class="pull-left">
+                    <a class="logo" ui-sref="main"><img src="/img/logo.png"></a>
+                </div>
+                <ul class="pull-left">
+                    <li><a>Listings</a></li>
+                </ul>
+                <ul class="pull-right">
+                    <li><a>Login</a></li>
+                    <li><a>Signup</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="site" ui-view></div>
+
+        <footer class="md-padding">
+            <div class="container text-center">
+                <p>Designed and built by <a href="http://twitter.com/karelvuong">@karelvuong</a>.</p>
+                <ul>
+                    <li><a href="http://github.com/karelvuong/dimensions/" target="_blank">GitHub</a></li>
+                    <li><a href="http://github.com/karelvuong/dimensions/issues?state=open" target="_blank">Contribute</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script> -->
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-route.min.js"></script> -->
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script> -->
+
+
+        <script src="/js/lib/jquery-1.11.0.min.js"></script>
+        <script src="/js/lib/angular.min.js"></script>
+        <script src="/js/lib/angular-ui-router.min.js"></script>
+
+        <script src="/js/lib/holder.js"></script>
+        <script src="/js/app.js"></script>
+        <script src="/js/controllers.js"></script>
+        <script src="/js/directives.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+footer {
+    color: #777;
+
+    p {
+        font-size: 10px;
+    }
+
+    ul {
+        font-size: 0;
+        list-style: none;
+
+        li {
+            display: inline-block;
+            font-size: 10px;
+
+            &:last-child:after { content: '' }
+            &:after {
+                content: '\b7';
+                margin: 0 2px;
+            }
+        }
+    }
+}

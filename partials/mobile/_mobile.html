@@ -1,0 +1,23 @@
+<div ui-view class="has-secondary">
+    <div class="secondary">
+        <div class="container">
+            <i class="fa fa-search"></i>
+            <div class="links">
+                <input type="text" ng-model="search.name" placeholder="Search...">
+            </div>
+        </div>
+    </div>
+
+    <a ui-sref="{{ os.state }}" class="cheatsheet {{ os.class }}" ng-repeat="os in mobileOS | filter:search.name">
+        <div class="inner container text-center">
+            <h2 class="clr-white">{{ os.name }}</h2>
+            <p class="clr-white">Last updated on {{ os.date }}.</p>
+        </div>
+    </a>
+
+    <section class="cheatsheet empty" ng-show="(mobileOS | filter:search.name).length == 0">
+        <div class="inner container text-center">
+            <h2>No results.</h2>
+        </div>
+    </section>
+</div>

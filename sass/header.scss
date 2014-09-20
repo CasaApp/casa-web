@@ -1,0 +1,53 @@
+header {
+    background: #EA4831;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    z-index: 100;
+
+    .logo {
+        img {
+            height: 30px;
+            width: auto;
+            margin: 10px 0;
+        }
+    }
+
+    ul {
+        font-size: 0;
+        list-style: none;
+
+        li {
+            display: inline-block;
+            margin: 0 20px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        a {
+            color: #fff;
+            display: inline-block;
+            font-size: 12px;
+
+            &:hover,
+            &.active {
+                text-decoration: none;
+            }
+
+            &:hover { color: rgba(#fff, 0.75); }
+            &.active { color: #fff; }
+
+        }
+    }
+
+    a {
+        font-weight: 700;
+        line-height: 50px;
+
+        @include transition(all ease-in-out 0.15s);
+    }
+}

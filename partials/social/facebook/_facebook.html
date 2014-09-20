@@ -1,0 +1,44 @@
+<div ui-view>
+    <div class="secondary facebook">
+        <div class="container">
+            <i ui-sref="social" class="fa fa-folder"></i>
+            <ul class="links">
+                <li><a ui-sref="social.facebook.demo"><strong>Interactive Demo</strong></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="md-padding bg-facebook">
+        <div class="inner container text-center">
+            <h2 class="clr-white">Facebook</h2>
+            <p class="clr-white">Last updated on May 25, 2014.</p>
+            <a ui-sref="social.facebook.demo"><button>Interactive demo</button></a>
+        </div>
+    </section>
+
+    <div class="display-type-container md-padding text-center">
+        <a class="toggle" ng-class="{active: showVisualizations}" ng-click="showVisualizations = !showVisualizations">
+            <i class="fa fa-circle-o"></i> Show visualizations
+        </a>
+    </div>
+
+    <div class="container md-padding text-center">
+        <div class="sm-padding">
+            <h3>Cover Photo</h3>
+            <h4 ng-hide="showVisualizations">851 x 315</h4>
+        </div>
+        <img class="md-padding no-top-padding" src="holder.js/851x315/auto" holder ng-show="showVisualizations">
+
+        <div class="sm-padding">
+            <h3>Profile Picture</h3>
+            <h4 ng-hide="showVisualizations">160 x 160</h4>
+        </div>
+        <img class="md-padding no-top-padding" src="holder.js/160x160/auto" holder ng-show="showVisualizations">
+
+        <div class="sm-padding">
+            <h3>App Image</h3>
+            <h4 ng-hide="showVisualizations">111 x 74</h4>
+        </div>
+        <img class="md-padding no-top-padding" src="holder.js/111x74/auto" holder ng-show="showVisualizations">
+    </div>
+</div>
