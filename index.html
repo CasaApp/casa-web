@@ -29,8 +29,8 @@
             <div ui-view="breadcrumb"></div>
 
             <ul class="pull-right" ng-if="!loggedIn">
-                <li ng-controller="ModalDemoCtrl"><a ng-click="open()">Login</a></li>
-                <li><a ui-sref="signup">Sign Up</a></li>
+                <li ng-controller="ModalLoginCtrl"><a ng-click="open()">Login</a></li>
+                <li ng-controller="ModalSignupCtrl"><a ng-click="open()">Signup</a></li>
             </ul>
             <ul class="pull-right" ng-if="loggedIn">
                 <li><a ui-sref="profile({username:'karelvuong'})">Me</a></li>
@@ -40,7 +40,7 @@
 
         <div class="site" ui-view></div>
 
-        <script type="text/ng-template" id="myModalContent.html">
+        <script type="text/ng-template" id="loginModal.html">
             <div class="modal-body modal-login">
                 <form>
                     <input class="input-username" type="text" placeholder="E-mail address">
@@ -56,8 +56,20 @@
                     </div>
 
                     <button class="bg-red" type="submit" ng-click="login(); toggleLoggedIn()">Log In</button>
-                    <a ui-sref="signup"><button class="bg-blue">Sign Up</button></a>
-                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    <button class="" ng-controller="ModalSignupCtrl" ng-click="cancel(); open()">Sign Up</button>
+                    <button class="" ng-click="cancel()">Cancel</button>
+                </form>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="signupModal.html">
+            <div class="modal-body modal-login">
+                <form>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="E-mail address">
+                    <input type="password" placeholder="Password">
+                    <button class="bg-red" type="submit" ng-click="signup(); toggleLoggedIn()">Sign Up</button>
+                    <button class="" ng-click="cancel()">Cancel</button>
                 </form>
             </div>
         </script>
