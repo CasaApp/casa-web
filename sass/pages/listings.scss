@@ -41,23 +41,36 @@
     font-size: 20px;
     margin: 20px;
     margin-bottom: 0;
-    padding: 10px;
     text-align: left;
 
     .tab {
-        p {
-            color: #333;
+        opacity: 0.5;
 
-            .label {
-                background-color: #555;
-                color: #fff;
-                padding: 2px 8px;
-                border-radius: 4px;
+        a {
+            color: #333;
+            display: block;
+            padding: 10px;
+        }
+
+        &:hover {
+            opacity: 1;
+
+            a {
+                text-decoration: none;
             }
         }
 
+        .label {
+            background-color: #555;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
         &.tab--active {
-            p {
+            opacity: 1;
+
+            a {
                 color: #D32D15;
             }
 

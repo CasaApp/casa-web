@@ -20,13 +20,24 @@ angular.module('casa', [
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
-    .state('main', {
+    .state('home', {
         url: "/",
+        templateUrl: "/partials/listings/_layout.html"
+    })
+    .state('listings', {
+        url: "/listings",
         templateUrl: "/partials/listings/_layout.html"
     })
     .state('listings.new', {
         url: "/new",
-        templateUrl: "/partials/listings/new.html"
+        views: {
+            "": {
+                templateUrl: "/partials/listings/new.html"
+            },
+            "@breadcrumb": {
+                templateUrl: "Back to Listings"
+            }
+        }
     })
     .state('listings.view', {
         url: "/{subletId:[0-9]{1,8}}",
@@ -41,7 +52,7 @@ angular.module('casa', [
         templateUrl: "/partials/signup.html"
     })
     .state('profile', {
-        url: "/@{username:[a-zA-Z-]{1,30}}",
-        templateUrl: "/partials/profile.html"
+        url: "/me",
+        templateUrl: "/partials/me.html"
     })
 });

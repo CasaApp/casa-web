@@ -1,0 +1,137 @@
+<div class="panel-container" ui-view>
+    <div class="panel col-md-6">
+        <div class="panel-half">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11581.76041498235!2d-80.54485799999999!3d43.472285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf6ad02edccff%3A0xdd9df23996268e17!2sUniversity+of+Waterloo!5e0!3m2!1sen!2sca!4v1411250096725" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+
+        <div class="panel--filter panel-half border-t">
+            <div class="panel-inner">
+                <div class="box-sort sm-padding">
+                    <select class="select-sort">
+                        <option>Last Posted</option>
+                        <option>Price</option>
+                    </select>
+                </div>
+
+                <div class="row sm-padding">
+                    <div class="col-2 col-md-8">
+                        <label>Location</label>
+                        <input type="text" placeholder="Where do you want to center your search?">
+                    </div>
+
+                    <div class="col-2 col-md-4">
+                        <label>Distance</label>
+
+                        <div class="row">
+                            <div class="col-2 col-xs-6">
+                                <input type="number" value="5">
+                            </div>
+                            <div class="col-2 col-xs-6">
+                                <select>
+                                    <option default>Km</option>
+                                    <option>Mi</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row sm-padding">
+                    <div class="col-2 col-md-4">
+                        <label>Start Date</label>
+                        <input type="date" placeholder="Where do you want to center your search?">
+                    </div>
+
+                    <div class="col-2 col-right-offset col-md-4">
+                        <label>End Date</label>
+                        <input type="date" placeholder="Where do you want to center your search?">
+                    </div>
+
+                    <div class="col-2 col-left-offset col-md-2">
+                        <label>Max Price</label>
+
+                        <div class="input-currency-group">
+                            <span>$</span>
+                            <input class="input-currency" type="number" value="500" min="0" max="1000000">
+                        </div>
+                    </div>
+
+                    <div class="col-2 col-md-2">
+                        <label>Rooms</label>
+
+                        <select>
+                            <option default>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="box-apply">
+                    <a><button class="btn-apply">Apply</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel--listings panel col-md-6 col-md-offset-6 border-l" ng-controller="ListingsController">
+        <div class="tab-bar">
+            <div class="row">
+                <div class="tab tab-search-results col-md-6" ng-class="{'tab--active': !isBookmarksListShowing}">
+                    <a class="row" ng-click="isBookmarksListShowing = false">Search Results <span class="label pull-right" ng-bind="listings.length"></span></a>
+                </div>
+                <div class="tab tab-bookmarks col-md-6" ng-class="{'tab--active': isBookmarksListShowing}">
+                    <a class="row"ng-click="isBookmarksListShowing = true">Bookmarks <span class="label pull-right" ng-bind="(listings | filter: !bookmarked).length"></span></a>
+                </div>
+            </div>
+        </div>
+
+        <ul class="listings-list" ng-if="!isBookmarksListShowing">
+            <li class="listing" ng-repeat="sublet in listings">
+                <a class="cover" style="background-image: url({{sublet.cover}})" ui-sref="listings.view({subletId: sublet.id})"></a>
+
+                <a class="bookmark" ng-click="sublet.bookmarked = !sublet.bookmarked"><i class="fa" ng-class="{'fa-star-o': !sublet.bookmarked, 'fa-star': sublet.bookmarked}"></i></a>
+
+                <div class="information row sm-padding">
+                    <div class="availability col-md-2">
+                        <p class="availability-count pull-left">2</p>
+                        <p class="availability-text">rooms<br>available</p>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="address"><a ui-sref="listings.view({subletId: sublet.id})" ng-bind="sublet.address"></a></p>
+                        <p class="city" ng-bind="sublet.city"></p>
+                    </div>
+                    <div class="proximity text-right col-md-2">
+                        <p class="proximity-text pull-right">100m<br>away</p>
+                        <p class="proximity-icon pull-right"><i class="fa fa-map-marker"></i></p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="listings-list" ng-if="isBookmarksListShowing">
+            <li class="listing" ng-repeat="sublet in listings | filter: !bookmarked">
+                <a class="cover" style="background-image: url({{sublet.cover}})" ui-sref="listings.view({subletId: sublet.id})"></a>
+
+                <a class="bookmark" ng-click="sublet.bookmarked = !sublet.bookmarked"><i class="fa" ng-class="{'fa-star-o': !sublet.bookmarked, 'fa-star': sublet.bookmarked}"></i></a>
+
+                <div class="information row sm-padding">
+                    <div class="availability col-md-2">
+                        <p class="availability-count pull-left">2</p>
+                        <p class="availability-text">rooms<br>available</p>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="address"><a ui-sref="listings.view({subletId: sublet.id})" ng-bind="sublet.address"></a></p>
+                        <p class="city" ng-bind="sublet.city"></p>
+                    </div>
+                    <div class="proximity text-right col-md-2">
+                        <p class="proximity-text pull-right">100m<br>away</p>
+                        <p class="proximity-icon pull-right"><i class="fa fa-map-marker"></i></p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
