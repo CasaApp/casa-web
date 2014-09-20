@@ -12,6 +12,7 @@ label {
 select,
 input[type="date"],
 input[type="number"],
+input[type="password"],
 input[type="text"] {
     background-color: #fff;
     border: 2px solid #eee;
@@ -20,6 +21,10 @@ input[type="text"] {
     font-size: 12px;
     height: 30px;
     padding: 6px;
+
+    &:focus {
+        border-color: #52bad5;
+    }
 }
 
 .input-currency-group {

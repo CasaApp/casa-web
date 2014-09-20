@@ -13,6 +13,7 @@
 
 @import "modules/buttons";
 @import "modules/inputs";
+@import "modules/modals";
 
 @import "pages/listings";
 
@@ -189,8 +190,8 @@ ul, ol {
 }
 
 .border-l {
-    border-left: 1px solid #bbb;
-    margin-right: -1px;
+    border-left: 6px solid #ddd;
+    margin-right: -6px;
 }
 
 
@@ -318,5 +319,28 @@ ul, ol {
     .panel-inner {
         height: 100%;
         position: relative;
+    }
+}
+
+.modal-login {
+    .input-username,
+    .input-password {
+        width: 100%;
+        height: auto;
+    }
+
+    .login-controls {
+        padding: 10px 0;
+    }
+
+    button {
+        text-align: center;
+        width: 100%;
+        background-color: #777;
+        color: white;
+
+        & + button {
+            margin-top: 5px;
+        }
     }
 }

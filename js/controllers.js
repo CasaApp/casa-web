@@ -10,6 +10,7 @@ angular.module('casa.controllers', [])
         console.log($scope.loggedIn);
     }
 })
+
 .controller('ListingsController', function($scope) {
     $scope.listings = [
         {
@@ -43,4 +44,38 @@ angular.module('casa.controllers', [])
             "city": "Waterloo, ON"
         }
     ]
+})
+
+
+
+.controller('ModalDemoCtrl', function($scope, $modal, $log) {
+
+  $scope.open = function (size) {
+
+    var modalInstance = $modal.open({
+      templateUrl: 'myModalContent.html',
+      controller: ModalInstanceCtrl,
+      size: "sm",
+      resolve: {}
+    });
+
+    modalInstance.result.then(function () {
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+  // Please note that $modalInstance represents a modal window (instance) dependency.
+// It is not the same as the $modal service used above.
+
+var ModalInstanceCtrl = function ($scope, $modalInstance) {
+
+  $scope.login = function () {
+    $modalInstance.close();
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+};
 })
