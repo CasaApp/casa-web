@@ -29,26 +29,28 @@
                     <a class="logo" ui-sref="main"><img src="/img/logo.png"></a>
                 </div>
                 <ul class="pull-left">
-                    <li><a>Listings</a></li>
+                    <li><a ui-sref="listings">Listings</a></li>
+                    <li ng-if="loggedIn"><a ui-sref="bookmarks">Bookmarks</a></li>
                 </ul>
-                <ul class="pull-right">
-                    <li><a>Login</a></li>
-                    <li><a>Signup</a></li>
+                <ul class="pull-right" ng-if="!loggedIn">
+                    <li><a ui-sref="login">Login</a></li>
+                    <li><a ui-sref="signup">Signup</a></li>
+                </ul>
+                <ul class="pull-right" ng-if="loggedIn">
+                    <li><a ui-sref="profile">Name</a></li>
                 </ul>
             </div>
         </header>
 
         <div class="site" ui-view></div>
 
-        <footer class="md-padding">
+        <!-- <footer class="md-padding">
             <div class="container text-center">
-                <p>Designed and built by <a href="http://twitter.com/karelvuong">@karelvuong</a>.</p>
                 <ul>
-                    <li><a href="http://github.com/karelvuong/dimensions/" target="_blank">GitHub</a></li>
-                    <li><a href="http://github.com/karelvuong/dimensions/issues?state=open" target="_blank">Contribute</a></li>
+                    <li><a ng-click="toggleLoggedIn()">Toggle login</a></li>
                 </ul>
             </div>
-        </footer>
+        </footer> -->
 
         <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script> -->
         <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script> -->

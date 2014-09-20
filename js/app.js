@@ -25,7 +25,7 @@ angular.module('casa', [
     })
     .state('listings', {
         url: "/listings",
-        templateUrl: "/partials/listings.html"
+        templateUrl: "/partials/listings/_layout.html"
     })
     .state('listings.new', {
         url: "/new",
