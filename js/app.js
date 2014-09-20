@@ -1,11 +1,10 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('dimensions', [
-//    'ngRoute',
+angular.module('casa', [
     'ui.router',
-    'dimensions.controllers',
-    'dimensions.directives'
+    'casa.controllers',
+    'casa.directives'
 ])
 
 .run(function($rootScope, $state){
@@ -24,54 +23,28 @@ angular.module('dimensions', [
         url: "/",
         templateUrl: "/partials/main.html"
     })
-    .state('social', {
-        url: "/social",
-        controller: "SocialController",
-        templateUrl: "/partials/social/_social.html",
+    .state('listings', {
+        url: "/listings",
+        templateUrl: "/partials/listings.html"
     })
-    .state('social.facebook', {
-        url: "/facebook",
-        templateUrl: "/partials/social/facebook/_facebook.html",
+    .state('listings.new', {
+        url: "/new",
+        templateUrl: "/partials/listings/new.html"
     })
-    .state('social.facebook.demo', {
-        url: "/demo",
-        templateUrl: "/partials/social/facebook/_demo.html",
+    .state('bookmarks', {
+        url: "/bookmarks",
+        templateUrl: "/partials/bookmarks.html"
     })
-    .state('social.facebook.demo.user', {
-        url: "/user",
-        templateUrl: "/partials/social/facebook/user.html",
+    .state('login', {
+        url: "/login",
+        templateUrl: "/partials/login.html"
     })
-    .state('social.googleplus', {
-        url: "/googleplus",
-        templateUrl: "/partials/social/googleplus.html",
+    .state('signup', {
+        url: "/signup",
+        templateUrl: "/partials/signup.html"
     })
-    .state('social.instagram', {
-        url: "/instagram",
-        templateUrl: "/partials/social/instagram.html",
-    })
-    .state('social.linkedin', {
-        url: "/linkedin",
-        templateUrl: "/partials/social/linkedin.html",
-    })
-    .state('social.pinterest', {
-        url: "/pinterest",
-        templateUrl: "/partials/social/pinterest.html",
-    })
-    .state('social.twitter', {
-        url: "/twitter",
-        templateUrl: "/partials/social/twitter.html",
-    })
-    .state('social.vimeo', {
-        url: "/vimeo",
-        templateUrl: "/partials/social/vimeo.html",
-    })
-    .state('social.youtube', {
-        url: "/youtube",
-        templateUrl: "/partials/social/youtube.html",
-    })
-    .state('mobile', {
-        url: "/mobile",
-        controller: "MobileController",
-        templateUrl: "/partials/mobile/_mobile.html",
+    .state('profile', {
+        url: "/@{username:[a-zA-Z-]{1,30}}",
+        templateUrl: "/partials/profile.html"
     })
 });
