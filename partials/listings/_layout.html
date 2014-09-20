@@ -7,30 +7,35 @@
         </div>
 
         <div class="panel-half border-t">
-            <div class="sm-padding">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <div class="panel-inner">
+                <div class="box-sort sm-padding">
+                    <select class="select-sort">
+                        <option>Last Posted</option>
+                        <option>Price</option>
+                    </select>
+                </div>
+
+                <div class="sm-padding">
+
+                </div>
+
+                <div class="box-apply">
+                    <a><button class="btn-apply">Apply</button></a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="panel col-md-6 col-md-offset-6 border-l">
-        <div class="sm-padding">
-            <select class="select-sort">
-                <option>Last Posted</option>
-                <option>Price</option>
-            </select>
+    <div class="panel--listings panel col-md-6 col-md-offset-6 border-l" ng-controller="ListingsController">
+        <ul class="listings-list">
+            <li class="listing" ng-repeat="sublet in listings">
+                <div class="cover"></div>
 
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
+                <div class="information sm-padding">
+                    <p class="address" ng-bind="sublet.address"></p>
+                    <p class="city" ng-bind="sublet.city"></p>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>

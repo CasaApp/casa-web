@@ -10,3 +10,27 @@ angular.module('casa.controllers', [])
         console.log($scope.loggedIn);
     }
 })
+.controller('ListingsController', function($scope) {
+    $scope.listings = [
+        {
+            "address": "49 Columbia St. W",
+            "city": "Waterloo, ON"
+        },
+        {
+            "address": "49 Columbia St. W",
+            "city": "Waterloo, ON"
+        },
+        {
+            "address": "49 Columbia St. W",
+            "city": "Waterloo, ON"
+        },
+        {
+            "address": "49 Columbia St. W",
+            "city": "Waterloo, ON"
+        },
+        {
+            "address": "49 Columbia St. W",
+            "city": "Waterloo, ON"
+        }
+    ]
+})

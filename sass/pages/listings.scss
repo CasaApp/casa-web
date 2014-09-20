@@ -1,5 +1,53 @@
-.page-listings {
-    .select-sort {
+.box-sort {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #bbb;
 
+    input,
+    select {
+        width: 100%;
+        font-size: 50px;
+    }
+}
+
+.box-apply {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .btn-apply {
+        background-color: $clr-red;
+        border-radius: 4px;
+        color: #fff;
+        width: 100%;
+
+        &:hover {
+            background-color: darken($clr-red, 5%);
+        }
+    }
+}
+
+
+.listings-list {
+    .listing {
+        border-bottom: 1px solid #ddd;
+
+        .cover {
+            background-color: #eee;
+            border-bottom: 1px solid #ddd;
+            height: 250px;
+        }
+
+        .address {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+
+        .city {
+            color: #929292;
+            font-size: 16px;
+        }
     }
 }
