@@ -3,6 +3,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('casa', [
     'ui.router',
+    'ui.bootstrap',
     'casa.controllers',
     'casa.directives'
 ])
@@ -38,10 +39,6 @@ angular.module('casa', [
     .state('bookmarks', {
         url: "/bookmarks",
         templateUrl: "/partials/bookmarks.html"
-    })
-    .state('login', {
-        url: "/login",
-        templateUrl: "/partials/login.html"
     })
     .state('signup', {
         url: "/signup",

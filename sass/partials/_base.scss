@@ -6,6 +6,7 @@ $clr-red: #EA4831;
 // Backgrounds
 //
 .bg-gray { background-color: $clr-gray !important; }
+.bg-red { background-color: $clr-red !important; }
 
 @mixin animation($animation-property, $method) {
     -webkit-animation: $animation-property $method;
