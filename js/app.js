@@ -31,6 +31,10 @@ angular.module('casa', [
         url: "/new",
         templateUrl: "/partials/listings/new.html"
     })
+    .state('listings.view', {
+        url: "/{subletId:[0-9]{1,8}}",
+        templateUrl: "/partials/listings/view.html"
+    })
     .state('bookmarks', {
         url: "/bookmarks",
         templateUrl: "/partials/bookmarks.html"

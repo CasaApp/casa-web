@@ -135,9 +135,9 @@ ul, ol {
     margin-left: auto;
     padding: 0 20px;
 
-    @media (min-width: $breakpoint-sm-min) { width: 750px; }
-    @media (min-width: $breakpoint-md-min) { width: 970px; }
-    @media (min-width: $breakpoint-lg-min) { width: 1170px; }
+    @media (min-width: $breakpoint-sm-min) { width: 740px; }
+    @media (min-width: $breakpoint-md-min) { width: 960px; }
+    @media (min-width: $breakpoint-lg-min) { width: 1060px; }
 
     &:before,
     &:after {
@@ -167,7 +167,7 @@ ul, ol {
 
 .sm-padding { padding: 10px; }
 .md-padding { padding: 20px; }
-.lg-padding { padding: 40px; }
+.lg-padding { padding: 80px; }
 
 .no-top-padding     { padding-top:      0 !important; }
 .no-bottom-padding  { padding-bottom:   0 !important; }
@@ -227,63 +227,71 @@ ul, ol {
 }
 
 .masthead {
-   background: url("/img/bg.png") no-repeat center center;
-   background-size: cover;
-   padding: 160px 0;
-   position: relative;
+    background: url("/img/bg.png") no-repeat center center;
+    background-size: cover;
+    padding: 160px 0;
+    position: relative;
 
    &:before {
-       content: "";
-       background-color: rgba(#fff, 0.5);
-       height: 100%;
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
+        content: "";
+        background-color: rgba(#000, 0.5);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
    }
 
    .inner {
-       position: relative;
-       z-index: 2;
+        position: relative;
+        z-index: 2;
    }
 
-   input {
-       border: 2px solid rgba(#000, 0.25);
-       border-radius: 4px;
-       font-size: 24px;
-       padding: 10px;
-       margin-bottom: 10px;
-       min-width: 600px;
-   }
-
-   button {
-       position: relative;
-       top: -2px;
-       left: -15px;
-       background-color: #777;
-       color: #fff;
-       height: 52px;
-       border-top-left-radius: 0;
-       border-bottom-left-radius: 0;
-   }
+    p {
+        color: #fff;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1;
+    }
 }
 
-.masthead,
-.text {
-   h3 { margin-bottom: 10px; }
 
-   p {
-       font-size: 20px;
-       margin-right: auto;
-       margin-left: auto;
-       max-width: 640px;
-   }
+
+
+
+
+.section--search {
+    background-color: #333;
+    padding: 20px;
+
+    input {
+        border: 2px solid rgba(#000, 0.25);
+        border-radius: 4px;
+        font-size: 24px;
+        height: auto;
+        padding: 10px;
+        min-width: 600px;
+    }
+
+    button {
+        background-color: $clr-teal;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        color: #fff;
+        font-size: 24px;
+        height: 53px;
+        position: relative;
+        top: 0;
+        left: -15px;
+        text-align: center;
+        width: 52px;
+    }
 }
 
 .text {
-   p {
-       font-size: 16px;
-   }
+    p {
+        font-size: 16px;
+    }
 }
 
 .panel-container {

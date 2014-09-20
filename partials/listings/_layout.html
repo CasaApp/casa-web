@@ -1,4 +1,4 @@
-<div class="panel-container">
+<div class="panel-container" ui-view>
     <div class="panel col-md-6">
         <div class="panel-half">
             <div class="google-maps">
@@ -83,7 +83,7 @@
             <li class="listing" ng-repeat="sublet in listings">
                 <div class="cover" style="background-image: url({{sublet.cover}})"></div>
 
-                <a class="information sm-padding">
+                <a class="information sm-padding" ui-sref="listings.view({subletId: sublet.id})">
                     <p class="address" ng-bind="sublet.address"></p>
                     <p class="city" ng-bind="sublet.city"></p>
                 </a>

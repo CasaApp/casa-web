@@ -9,5 +9,5 @@ button {
     margin: 0;
     padding: 8px 14px;
 
-    @include transition(background-color ease-in-out 1.5s);
+    @include transition(background-color ease-in-out .15s);
 }
