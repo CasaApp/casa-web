@@ -2,13 +2,12 @@
 
 angular.module('casa.controllers', [])
 
-.controller('ApplicationController', function($scope, $rootScope, $state  ) {
-    $rootScope.loggedIn = false;
+.controller('ApplicationController', function($scope) {
+    $scope.loggedIn = false;
 
-    $rootScope.toggleLoggedIn = function() {
-        $rootScope.loggedIn = !$rootScope.loggedIn;
-        $state.go('listings')
-        console.log($rootScope.loggedIn);
+    $scope.toggleLoggedIn = function() {
+        $scope.loggedIn = !$scope.loggedIn;
+        console.log($scope.loggedIn);
     }
 })
 
@@ -49,34 +48,53 @@ angular.module('casa.controllers', [])
 
 
 
-.controller('ModalDemoCtrl', function($scope, $modal, $log) {
+.controller('ModalLoginCtrl', function($scope, $modal, $log) {
+    $scope.open = function (size) {
+        var modalInstance = $modal.open({
+            templateUrl: 'loginModal.html',
+            controller: LoginModalInstance,
+            size: size,
+            resolve: {}
+        });
 
-  $scope.open = function (size) {
+        modalInstance.result.then(function () {
+        }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
 
-    var modalInstance = $modal.open({
-      templateUrl: 'myModalContent.html',
-      controller: ModalInstanceCtrl,
-      size: "md",
-      resolve: {}
-    });
+    var LoginModalInstance = function ($scope, $modalInstance) {
+        $scope.login = function () {
+            $modalInstance.close();
+        };
 
-    modalInstance.result.then(function () {
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-  };
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    };
+})
+.controller('ModalSignupCtrl', function($scope, $modal, $log) {
+    $scope.open = function (size) {
+        var modalInstance = $modal.open({
+            templateUrl: 'signupModal.html',
+            controller: SignupModalInstance,
+            size: size,
+            resolve: {}
+        });
 
-  // Please note that $modalInstance represents a modal window (instance) dependency.
-// It is not the same as the $modal service used above.
+        modalInstance.result.then(function () {
+        }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
 
-var ModalInstanceCtrl = function ($scope, $modalInstance) {
+    var SignupModalInstance = function ($scope, $modalInstance) {
+        $scope.signup = function () {
+            $modalInstance.close();
+        };
 
-  $scope.login = function () {
-    $modalInstance.close();
-  };
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
-};
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    };
 })

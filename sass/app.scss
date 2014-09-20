@@ -323,11 +323,16 @@ ul, ol {
 }
 
 .modal-login {
-    .input-username,
-    .input-password {
+    input[type="email"],
+    input[type="text"],
+    input[type="password"] {
         font-size: 20px;
         width: 100%;
         height: auto;
+
+        & + button {
+            margin-top: 10px;
+        }
     }
 
     .input-username {
