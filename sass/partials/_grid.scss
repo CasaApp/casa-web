@@ -10,6 +10,14 @@ $breakpoint-lg-max: 1199px;
 
 // ----------------------------------------------------------------------------
 
+.col-2 {
+    &:nth-child(odd) { padding-right: 5px; }
+    &:nth-child(even) { padding-left:  5px; }
+}
+
+.col-right-offset { padding-right: 5px; }
+.col-left-offset  { padding-left: 5px; }
+
 .clearfix:before,
 .clearfix:after,
 .container:before,
@@ -71,8 +79,6 @@ $breakpoint-lg-max: 1199px;
 .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11,
 .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   min-height: 1px;
-  padding-right: 20px;
-  padding-left: 20px;
   position: relative;
 }
 

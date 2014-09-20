@@ -1,3 +1,38 @@
 input {
     outline: none;
 }
+
+label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+select,
+input[type="date"],
+input[type="number"],
+input[type="text"] {
+    background-color: #fff;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    font-family: "HelveticaNeue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 30px;
+    padding: 6px;
+}
+
+.input-currency-group {
+    position: relative;
+
+    span {
+        display: inline-block;
+        position: absolute;
+        line-height: 30px;
+        padding: 0 10px;
+    }
+
+    .input-currency {
+        padding-left: 20px;
+    }
+}

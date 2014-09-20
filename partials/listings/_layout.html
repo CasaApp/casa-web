@@ -6,7 +6,7 @@
             </div>
         </div>
 
-        <div class="panel-half border-t">
+        <div class="panel--filter panel-half border-t">
             <div class="panel-inner">
                 <div class="box-sort sm-padding">
                     <select class="select-sort">
@@ -15,8 +15,60 @@
                     </select>
                 </div>
 
-                <div class="sm-padding">
+                <div class="row sm-padding">
+                    <div class="col-2 col-md-8">
+                        <label>Location</label>
+                        <input type="text" placeholder="Where do you want to center your search?">
+                    </div>
 
+                    <div class="col-2 col-md-4">
+                        <label>Distance</label>
+
+                        <div class="row">
+                            <div class="col-2 col-xs-6">
+                                <input type="number" value="5">
+                            </div>
+                            <div class="col-2 col-xs-6">
+                                <select>
+                                    <option default>Km</option>
+                                    <option>Mi</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row sm-padding">
+                    <div class="col-2 col-md-4">
+                        <label>Start Date</label>
+                        <input type="date" placeholder="Where do you want to center your search?">
+                    </div>
+
+                    <div class="col-2 col-right-offset col-md-4">
+                        <label>End Date</label>
+                        <input type="date" placeholder="Where do you want to center your search?">
+                    </div>
+
+                    <div class="col-2 col-left-offset col-md-2">
+                        <label>Max Price</label>
+
+                        <div class="input-currency-group">
+                            <span>$</span>
+                            <input class="input-currency" type="number" value="500" min="0" max="1000000">
+                        </div>
+                    </div>
+
+                    <div class="col-2 col-md-2">
+                        <label>Rooms</label>
+
+                        <select>
+                            <option default>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="box-apply">
@@ -29,12 +81,12 @@
     <div class="panel--listings panel col-md-6 col-md-offset-6 border-l" ng-controller="ListingsController">
         <ul class="listings-list">
             <li class="listing" ng-repeat="sublet in listings">
-                <div class="cover"></div>
+                <div class="cover" style="background-image: url({{sublet.cover}})"></div>
 
-                <div class="information sm-padding">
+                <a class="information sm-padding">
                     <p class="address" ng-bind="sublet.address"></p>
                     <p class="city" ng-bind="sublet.city"></p>
-                </div>
+                </a>
             </li>
         </ul>
     </div>

@@ -1,3 +1,10 @@
+.panel--filter {
+    input,
+    select {
+        width: 100%;
+    }
+}
+
 .box-sort {
     background-color: #f6f6f6;
     border-bottom: 1px solid #bbb;
@@ -5,7 +12,6 @@
     input,
     select {
         width: 100%;
-        font-size: 50px;
     }
 }
 
@@ -28,26 +34,38 @@
 }
 
 
+
+
+
 .listings-list {
     .listing {
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #bbb;
 
         .cover {
             background-color: #eee;
-            border-bottom: 1px solid #ddd;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-bottom: 1px solid #bbb;
             height: 250px;
         }
 
-        .address {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 0;
+        .information {
+            display: block;
+            text-decoration: none;
+
+            .address {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 0;
+            }
+
+            .city {
+                color: #929292;
+                font-size: 16px;
+            }
         }
 
-        .city {
-            color: #929292;
-            font-size: 16px;
-        }
     }
 }
