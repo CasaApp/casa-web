@@ -3,18 +3,12 @@
 angular.module('casa.controllers')
 
 .controller('ApplicationController', function($scope, $rootScope, $state  ) {
-    $rootScope.loggedIn = false;
-
     $rootScope.toggleLoggedIn = function() {
         $rootScope.loggedIn = !$rootScope.loggedIn;
-        $state.go('listings')
     }
 })
 
-
-
 .controller('ModalDemoCtrl', function($scope, $modal, $log) {
-
   $scope.open = function (size) {
 
     var modalInstance = $modal.open({

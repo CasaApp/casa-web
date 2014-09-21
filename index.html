@@ -58,7 +58,6 @@
 
                     <button class="bg-red" type="submit" ng-click="submit()">Log In</button>
                     <button class="" ng-controller="ModalSignupCtrl" ng-click="cancel(); open()">Sign Up</button>
-                    <button class="" ng-click="cancel()">Cancel</button>
                 </form>
             </div>
         </script>
@@ -70,7 +69,6 @@
                     <input type="email" placeholder="E-mail address" ng-model="signup.email">
                     <input type="password" placeholder="Password" ng-model="signup.password">
                     <button class="bg-red" type="submit" ng-click="submit(); toggleLoggedIn()">Sign Up</button>
-                    <button class="" ng-click="cancel()">Cancel</button>
                 </form>
             </div>
         </script>
@@ -86,6 +84,7 @@
         <script src="/js/controllers.js"></script>
         <script src="/js/controllers/main.js"></script>
         <script src="/js/controllers/listings.js"></script>
+        <script src="/js/controllers/sublet.js"></script>
         <script src="/js/directives.js"></script>
     </body>
 </html>
