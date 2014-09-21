@@ -10,4 +10,15 @@ button {
     padding: 8px 14px;
 
     @include transition(background-color ease-in-out .15s);
+
+    &.full-width {
+        background-color: $clr-red;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+
+        &:hover {
+            background-color: darken($clr-red, 5%);
+        }
+    }
 }

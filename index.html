@@ -30,8 +30,9 @@
 
             <ul class="pull-right" ng-if="!loggedIn">
                 <li ng-controller="ModalLoginCtrl"><a ng-click="open()">Login</a></li>
-                <li ng-controller="ModalSignupCtrl"><a ng-click="open()">Signup</a></li>
+                <li ng-controller="ModalSignupCtrl"><a ng-click="open()">Sign Up</a></li>
             </ul>
+
             <ul class="pull-right" ng-if="loggedIn">
                 <li><a ui-sref="profile({username:'karelvuong'})">Me</a></li>
                 <li><a ng-click="toggleLoggedIn()">Logout</a></li>
@@ -43,8 +44,8 @@
         <script type="text/ng-template" id="loginModal.html">
             <div class="modal-body modal-login">
                 <form>
-                    <input class="input-username" type="text" placeholder="E-mail address">
-                    <input class="input-password" type="password" placeholder="Password">
+                    <input class="input-username" type="text" placeholder="E-mail address" ng-model="login.email">
+                    <input class="input-password" type="password" placeholder="Password" ng-model="login.password">
 
                     <div class="login-controls row">
                         <div class="pull-left">
@@ -55,7 +56,7 @@
                         </div>
                     </div>
 
-                    <button class="bg-red" type="submit" ng-click="login(); toggleLoggedIn()">Log In</button>
+                    <button class="bg-red" type="submit" ng-click="submit()">Log In</button>
                     <button class="" ng-controller="ModalSignupCtrl" ng-click="cancel(); open()">Sign Up</button>
                     <button class="" ng-click="cancel()">Cancel</button>
                 </form>
@@ -65,10 +66,10 @@
         <script type="text/ng-template" id="signupModal.html">
             <div class="modal-body modal-login">
                 <form>
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="E-mail address">
-                    <input type="password" placeholder="Password">
-                    <button class="bg-red" type="submit" ng-click="signup(); toggleLoggedIn()">Sign Up</button>
+                    <input type="text" placeholder="Name" ng-model="signup.name">
+                    <input type="email" placeholder="E-mail address" ng-model="signup.email">
+                    <input type="password" placeholder="Password" ng-model="signup.password">
+                    <button class="bg-red" type="submit" ng-click="submit(); toggleLoggedIn()">Sign Up</button>
                     <button class="" ng-click="cancel()">Cancel</button>
                 </form>
             </div>

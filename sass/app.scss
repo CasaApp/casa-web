@@ -191,6 +191,11 @@ ul, ol {
     margin-bottom: -1px;
 }
 
+.border-b {
+    border-bottom: 1px solid #bbb;
+    margin-bottom: -1px;
+}
+
 .border-l {
     border-left: 6px solid #bbb;
     margin-right: -6px;
@@ -319,8 +324,8 @@ ul, ol {
         }
     }
 
-    .input-username {
-        margin-bottom: 10px;
+    input + input {
+        margin-top: 10px;
     }
 
     .login-controls {

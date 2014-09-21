@@ -1,4 +1,61 @@
-.sublet-cover {
-    background-color: #aaa;
-    height: 360px;
+.panel--sublet {
+    .sublet-cover {
+        background-color: #aaa;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 360px;
+    }
+
+    .user-information {
+        background-color: #f6f6f6;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .bookmarked {
+        font-size: 23px;
+        margin-right: 10px;
+
+        i {
+            color: #929292;
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+
+    .address {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0;
+
+        a {
+            color: #000;
+        }
+    }
+
+    .city {
+        color: #929292;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .tags {
+        h6 {
+            margin-bottom: 10px;
+        }
+
+        li {
+            background-color: #FFE9A8;
+            border: 1px solid darken(#FFE9A8, 10%);
+            border-radius: 4px;
+            display: inline-block;
+            padding: 0 4px;
+        }
+    }
 }
