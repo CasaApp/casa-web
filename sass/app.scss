@@ -311,6 +311,34 @@ ul, ol {
     }
 }
 
+.new-listing-container {
+    height: 100%;
+    position: relative;
+
+    .new-listing {
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    .btn-submit {
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+    .btn-apply {
+        background-color: $clr-red;
+        border-radius: 4px;
+        color: #fff;
+        width: 100%;
+
+        &:hover {
+            background-color: darken($clr-red, 5%);
+        }
+    }
+}
+}
+
 .modal-login {
     input[type="email"],
     input[type="text"],

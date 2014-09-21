@@ -11,8 +11,6 @@ angular.module('casa.controllers')
     }
 })
 
-
-
 .controller('ModalDemoCtrl', function($scope, $modal, $log) {
 
   $scope.open = function (size) {
