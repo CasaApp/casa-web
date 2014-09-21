@@ -5,6 +5,7 @@ angular.module('casa', [
     'ui.router',
     'ui.select2',
     'ui.bootstrap',
+    'angularFileUpload',
     'casa.controllers',
     'casa.directives'
 ])
