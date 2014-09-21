@@ -31,14 +31,7 @@ angular.module('casa', [
     })
     .state('listings.new', {
         url: "/new",
-        views: {
-            "": {
-                templateUrl: "/partials/listings/new.html"
-            },
-            "@breadcrumb": {
-                templateUrl: "Back to Listings"
-            }
-        }
+        templateUrl: "/partials/listings/new.html"
     })
     .state('listings.view', {
         url: "/{subletId:[0-9]{1,8}}",
