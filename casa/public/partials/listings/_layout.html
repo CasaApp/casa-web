@@ -52,7 +52,7 @@
 
                         <div class="input-currency-group">
                             <span>$</span>
-                            <input class="input-currency" type="number" min="0" max="1000000" ng-model="filter.max_price">
+                            <input class="input-currency" type="number" step="100" min="0" max="1000000" ng-model="filter.max_price">
                         </div>
                     </div>
 
@@ -76,11 +76,11 @@
         <div class="tab-bar">
             <div class="row">
                 <div class="tab tab-search-results col-md-6" ng-class="{'tab--active': !isBookmarksListShowing}">
-                    <a class="row" ng-click="isBookmarksListShowing = false">Search Results <span class="label pull-right" ng-bind="listings.length"></span></a>
+                    <a class="row" ng-click="isBookmarksListShowing = false">Results <span class="label pull-right" ng-bind="listings.length"></span></a>
                 </div>
 
                 <div class="tab tab-bookmarks col-md-6" ng-class="{'tab--active': isBookmarksListShowing}">
-                    <a class="row" ng-click="showBookmarksList()">Bookmarks <span class="label pull-right" ng-bind="(listings | filter: !bookmarked).length"></span></a>
+                    <a class="row" ng-click="isBookmarksListShowing = true">Bookmarks <span class="label pull-right" ng-bind="(listings | filter: !bookmarked).length"></span></a>
                 </div>
             </div>
         </div>

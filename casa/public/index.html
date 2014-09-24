@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" ng-app="casa">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Casa</title>
+    <meta name="title" content="Casa">
+    <meta name="description" content="">
+    <meta name="application-name" content="Casa">
+    <meta property="og:title" content="Casa">
+    <meta property="og:site_name" content="Casa">
+    <meta property="og:description" content="">
+
+    <base href="/"></base>
+
+    <link rel="stylesheet" href="/public/assets/css/app.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/public/assets/img/favicon.png" />
+    <link rel="icon" sizes="16x16 32x32" href="/public/assets/img/favicon.png">
+</head>
+
+<body ng-controller="ApplicationController">
+    <header>
+        <a class="logo pull-left" ui-sref="home"><img src="/public/assets/img/logo.png"></a>
+
+        <div ui-view="breadcrumb"></div>
+
+        <ul class="pull-right" ng-if="!loggedIn">
+            <li ng-controller="ModalLoginCtrl"><a ng-click="open()">Login</a></li>
+            <li ng-controller="ModalSignupCtrl"><a ng-click="open()">Sign Up</a></li>
+        </ul>
+
+        <ul class="pull-right" ng-if="loggedIn">
+            <li><a ui-sref="profile({username:'karelvuong'})">Me</a></li>
+            <li><a ng-click="toggleLoggedIn()">Logout</a></li>
+        </ul>
+    </header>
+
+    <div class="site" ui-view></div>
+
+    <script type="text/ng-template" id="loginModal.html">
+        <div class="modal-body modal-login">
+            <form>
+                <input class="input-username" type="text" placeholder="E-mail address" ng-model="login.email">
+                <input class="input-password" type="password" placeholder="Password" ng-model="login.password">
+
+                <div class="login-controls row">
+                    <div class="pull-left">
+                        <input type="checkbox"> <a>Remember me</a>
+                    </div>
+                    <div class="pull-right">
+                        <a>Forgot password?</a>
+                    </div>
+                </div>
+
+                <button class="bg-red" type="submit" ng-click="submit()">Log In</button>
+                <button class="" ng-controller="ModalSignupCtrl" ng-click="cancel(); open()">Sign Up</button>
+            </form>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="signupModal.html">
+        <div class="modal-body modal-login">
+            <form>
+                <input type="text" placeholder="Name" ng-model="signup.name">
+                <input type="email" placeholder="E-mail address" ng-model="signup.email">
+                <input type="password" placeholder="Password" ng-model="signup.password">
+                <button class="bg-red" type="submit" ng-click="submit(); toggleLoggedIn()">Sign Up</button>
+            </form>
+        </div>
+    </script>
+
+    <script src="/public/assets/js/lib.min.js"></script>
+    <script src="/public/assets/js/ng.min.js"></script>
+    <script src="/public/assets/js/controllers.min.js"></script>
+</body>
+</html>

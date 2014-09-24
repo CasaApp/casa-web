@@ -3,9 +3,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('casa', [
     'ui.router',
-    'ui.select2',
     'ui.bootstrap',
-    'angularFileUpload',
     'casa.controllers',
     'casa.directives'
 ])
@@ -19,7 +17,7 @@ angular.module('casa', [
             "cover": "http://cdn.designhomes.pics/design/www.furnituregraphic.com/wp-content/uploads/2011/10/New-York-City-Apartment-1.jpg",
             "address": "49 Columbia St. W",
             "city": "Waterloo, ON",
-            "price": 500,
+            "price": 900,
             "distance": 1900,
             "distance_str": "1.9km",
             "date": {
@@ -38,8 +36,8 @@ angular.module('casa', [
             "address": "333 King St. N",
             "city": "Waterloo, ON",
             "price": 870,
-            "distance": 1900,
-            "distance_str": "1.9km",
+            "distance": 2000,
+            "distance_str": "2.0km",
             "date": {
                 "start": 1409576000000,
                 "end": 1428138000000
@@ -48,7 +46,7 @@ angular.module('casa', [
             "tags": [
                 ""
             ],
-            "bookmarked": true
+            "bookmarked": false
         },
         {
             "id": 3,
@@ -56,8 +54,8 @@ angular.module('casa', [
             "address": "65 Columbia St. W",
             "city": "Waterloo, ON",
             "price": 675,
-            "distance": 1800,
-            "distance_str": "1.8km",
+            "distance": 5000,
+            "distance_str": "5.0km",
             "date": {
                 "start": 1419976000000,
                 "end": 1421138000000
@@ -73,9 +71,9 @@ angular.module('casa', [
             "cover": "http://www.idesignarch.com/wp-content/uploads/Loft-Style-Apartment-Design-NY_1.jpg",
             "address": "228 Oprington Place",
             "city": "Kitchener, ON",
-            "price": 550,
-            "distance": 5500,
-            "distance_str": "5.5km",
+            "price": 400,
+            "distance": 1000,
+            "distance_str": "1km",
             "date": {
                 "start": 1409976000000,
                 "end": 1419138000000
@@ -84,7 +82,7 @@ angular.module('casa', [
             "tags": [
                 ""
             ],
-            "bookmarked": true
+            "bookmarked": false
         }
     ]
 
@@ -101,31 +99,31 @@ angular.module('casa', [
     $stateProvider
     .state('home', {
         url: "/",
-        templateUrl: "/partials/listings/_layout.html"
+        templateUrl: "/public/partials/listings/_layout.html"
     })
     .state('listings', {
         url: "/listings",
-        templateUrl: "/partials/listings/_layout.html"
+        templateUrl: "/public/partials/listings/_layout.html"
     })
     .state('listings.new', {
         url: "/new",
-        templateUrl: "/partials/listings/new.html"
+        templateUrl: "/public/partials/listings/new.html"
     })
     .state('listings.view', {
         url: "/{subletId:[0-9]{1,8}}",
         controller: "SubletController",
-        templateUrl: "/partials/listings/view.html"
+        templateUrl: "/public/partials/listings/view.html"
     })
     .state('bookmarks', {
         url: "/bookmarks",
-        templateUrl: "/partials/bookmarks.html"
+        templateUrl: "/public/partials/bookmarks.html"
     })
     .state('signup', {
         url: "/signup",
-        templateUrl: "/partials/signup.html"
+        templateUrl: "/public/partials/signup.html"
     })
     .state('profile', {
         url: "/me",
-        templateUrl: "/partials/me.html"
+        templateUrl: "/public/partials/me.html"
     })
 });
